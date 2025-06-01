@@ -1,7 +1,7 @@
 # Hide Pause Menu Mod for Geometry Dash
 <img src="logo.png" width="75" alt="HideMenu logo" />
 
-Adds a customizable hide button to Geometry Dash's pause menu, perfect to get a better look at your deaths or capturing clean screenshots.
+Adds a customizable hide button to Geometry Dash pause menu, perfect to get a better look at your deaths or capturing clean screenshots.
 
 ## Features
 - Toggle visibility of all pause menu elements
