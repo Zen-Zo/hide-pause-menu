@@ -12,11 +12,11 @@
 	"developer": "ZenZo",
 	"description": "Adds a hide button the pause menu to hide it.",
 	"links": {
-		"source": "https://github.com/Zen-Zo/HidePauseMenuMod"
+		"source": "https://github.com/Zen-Zo/hide-pause-menu"
 	},
 	"issues": {
 		"info": "If you find any bugs, please report them on the mod's GitHub page.",
-		"url": "https://github.com/Zen-Zo/HidePauseMenuMod"
+		"url": "https://github.com/Zen-Zo/hide-pause-menu"
 	},
 	"dependencies": {
 			"geode.node-ids": {
