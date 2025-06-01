@@ -1,6 +1,6 @@
 # Hide Pause Menu
 
-Adds a hide button to the pause menu, perfect to get a better look at your deaths or capturing clean screenshots.
+Adds a hide button to the pause menu to hide it, perfect to get a better look at your deaths or capturing clean screenshots.
 
 ## Mod Settings
 - Toggle mod on/off
@@ -13,7 +13,7 @@ Adds a hide button to the pause menu, perfect to get a better look at your death
 Button remains visible when menu is hidden
 
 ![Default Mode - Button visible during menu hide](zenzo.hide_pause_menu/InvisibleDealocked.png?width=290)
-*"Show hitbox on death" currently not included within the mod*
+*"Show hitbox on death" not included within the mod*
 
 ### 2. Screenshot Mode
 Button disappears completely when hiding menu
