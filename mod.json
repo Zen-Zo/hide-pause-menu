@@ -16,7 +16,7 @@
 	},
 	"issues": {
 		"info": "If you find any bugs, please report them on the mod's GitHub page.",
-		"url": "https://github.com/Zen-Zo/hide-pause-menu"
+		"url": "https://github.com/Zen-Zo/hide-pause-menu/issues"
 	},
 	"dependencies": {
 			"geode.node-ids": {
