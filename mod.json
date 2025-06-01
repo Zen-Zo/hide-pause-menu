@@ -10,7 +10,7 @@
 	"name": "Hide Pause Menu",
 	"version": "v1.0.0",
 	"developer": "ZenZo",
-	"description": "Adds a hide button to the pause menu.",
+	"description": "Adds a button to hide the pause menu.",
 	"links": {
 		"source": "https://github.com/Zen-Zo/HidePauseMenuMod"
 	},
