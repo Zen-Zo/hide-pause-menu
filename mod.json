@@ -8,7 +8,7 @@
 	},
 	"id": "zenzo.hide_pause_menu",
 	"name": "Hide Pause Menu",
-	"version": "v1.0.0",
+	"version": "v1.0.1",
 	"developer": "ZenZo",
 	"description": "Adds a hide button the pause menu to hide it.",
 	"links": {
