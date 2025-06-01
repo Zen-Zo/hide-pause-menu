@@ -1,0 +1,58 @@
+{
+	"geode": "4.5.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "zenzo.hide_pause_menu",
+	"name": "Hide Pause Menu",
+	"version": "v1.0.0",
+	"developer": "ZenZo",
+	"description": "Adds a hide button to the pause menu.",
+	"links": {
+		"source": "https://github.com/Zen-Zo/HidePauseMenuMod"
+	},
+	"issues": {
+		"info": "If you find any bugs, please report them on the mod's GitHub page.",
+		"url": "https://github.com/Zen-Zo/HidePauseMenuMod"
+	},
+	"dependencies": {
+			"geode.node-ids": {
+				"version": ">=v1.20.1",
+				"importance": "required"
+			}
+	},
+	"settings": {
+		"hide_button_mod" : {
+			"type": "bool",
+			"default": true,
+			"name": "Enable Mod",
+			"description": "Soft toggles the mod."
+		},
+		"hide_button_pos" : {
+			"type": "string",
+			"default": "Right",
+			"one-of": ["Left", "Bottom", "Right"],
+			"name": "Button Position",
+			"description": "Position of the button inside the pause menu."
+		},
+		"screenshot_mode" : {
+			"type": "bool",
+			"default": false,
+			"name": "Screenshot Mode",
+			"description": "Hide the 'Hide Pause Menu' button when the Pause Menu is hidden.\nThis is useful for taking screenshots without the button being in the way.\nWith this enabled, just click/tap the screen to re-show the pause menu."
+		}
+	},
+	"resources": {
+        "sprites": [
+            "resources/*.png"
+        ]
+    },
+	"tags": [
+		"offline",
+		"enhancement",
+		"utility"
+	]
+}
