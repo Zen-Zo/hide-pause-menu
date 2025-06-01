@@ -1,5 +1,5 @@
 # v1.0.2
-- Fixing links...
+- Build for other platforms.
 
 # v1.0.1
 - Fixed typos and links.
