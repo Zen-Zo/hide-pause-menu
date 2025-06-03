@@ -14,14 +14,15 @@ class $modify(HidePauseLayer, PauseLayer) {
 		Mod* m_mod = Mod::get();
 		CCNode* m_buttonPos;
 		CCMenuItemSpriteExtra* m_button;
+		std::unordered_set<std::string> m_nonVisibleChildren;
 	};
 
 	void customSetup() {
 		PauseLayer::customSetup();
 		if (!m_fields->m_mod->getSettingValue<bool>("hide_button_mod")) return;
 
-		this->updateButtonPos();
-		if (!m_fields->m_buttonPos) return; // Should never happen, unless another mod remove the "{}-button-menu" node.
+		updateButtonPos();
+		if (!m_fields->m_buttonPos) return;
 	
 		auto hideBtnSpr = CircleButtonSprite::create(CCSprite::createWithSpriteFrameName("hideBtn_001.png"));
 		hideBtnSpr->setScale(BUTTON_SPRITE_SCALE);
@@ -43,43 +44,59 @@ class $modify(HidePauseLayer, PauseLayer) {
 
 	void onHideButton(CCObject* pSender) {
 		const auto background = getChildByID("background");
-		if (!background) return; // Should never happen, unless another mod remove the "background" node.
+		if (!background) return;
 
 		const bool shouldShowUI = !background->isVisible();
 		const bool screenshotMode = m_fields->m_mod->getSettingValue<bool>("screenshot_mode");
 
-		this->changeChildsVisibility(
+		changeChildrenVisibility(
 			PauseLayer::getChildren(), 
 			shouldShowUI, 
 			m_fields->m_buttonPos->getID()
 		);
-
-		this->changeChildsVisibility(
+		
+		changeChildrenVisibility(
 			m_fields->m_buttonPos->getChildren(), 
 			shouldShowUI, 
-			screenshotMode ? "" : "hide-button"_spr
+			"hide-button"_spr
 		);
+		
+		// Alphalaneous's Pages API and Vanilla Pages specific fix for overlapping buttons.
+		// The visibility of the "{}-navigation-menu" nodes cant be changed for some reason.
+		// If this is the case in the future, the next 4 lines can be removed.
+		const auto rightNavigationMenu = getChildByID("right-button-menu-navigation-menu");
+		if (rightNavigationMenu) changeChildrenVisibility(rightNavigationMenu->getChildren(), shouldShowUI);
+		const auto centerNavigationMenu = getChildByID("center-button-menu-navigation-menu");
+		if (centerNavigationMenu) changeChildrenVisibility(centerNavigationMenu->getChildren(), shouldShowUI);
 
 		PauseLayer::setOpacity(shouldShowUI ? PAUSE_LAYER_OPACITY : HIDDEN_OPACITY);
 
-		if (screenshotMode) {
-			if (shouldShowUI) {
-				m_fields->m_button->setOpacity(MAX_OPACITY);
-				m_fields->m_button->setScale(DEFAULT_BUTTON_SCALE);
+		if (screenshotMode) updateButtonAppearance(shouldShowUI);
+	}
+
+	void changeChildrenVisibility(CCArray *children, const bool visibility, const std::string exceptionID = "") {
+		for (CCNode* child : CCArrayExt<CCNode>(children)) {
+			const std::string childID = child->getID();
+
+			if (childID == exceptionID || m_fields->m_nonVisibleChildren.count(childID) > 0) continue;
+
+			if (child->isVisible() != visibility) {
+				child->setVisible(visibility);
 			} else {
-				m_fields->m_button->setOpacity(HIDDEN_OPACITY);
-				// Setting opacity to 0 on a node sets the visibility to false, making it not clickable
-				m_fields->m_button->setVisible(true);
-				// Scale to the entire screen
-				m_fields->m_button->setScale(HIDDEN_BUTTON_SCALE);
+				m_fields->m_nonVisibleChildren.insert(childID);
 			}
 		}
 	}
 
-	void changeChildsVisibility(CCArray *childs, const bool visible, const std::string exceptionID = "") {
-		for (CCNode* child : CCArrayExt<CCNode>(childs)) {
-			if (child->getID() != exceptionID)
-				child->setVisible(visible);
+	void updateButtonAppearance(bool shouldShowUI) {
+		if (!m_fields->m_button) return;
+
+		if (shouldShowUI) {
+			m_fields->m_button->setOpacity(MAX_OPACITY);
+			m_fields->m_button->setScale(DEFAULT_BUTTON_SCALE);
+		} else {
+			m_fields->m_button->setOpacity(HIDDEN_OPACITY);
+			m_fields->m_button->setScale(HIDDEN_BUTTON_SCALE); // Scale to the entire screen
 		}
 	}
 };
