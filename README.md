@@ -7,15 +7,7 @@ Adds a configurable hide button to the pause menu to hide it, perfect to get a b
 - Toggle visibility of all pause menu elements
 - Configurable button position
 - Two different modes
-
-## Possible future features
-Hiding the menu could hide:s
-- Progression bar/percentage
-- Practice checkpoints
-- "New Best"/Diamonds/Orbs
-
-On death:
-- Show hitboxes
+- Customizable behavior
 
 ## Modes
 
@@ -37,3 +29,4 @@ Customize through Geode's mod settings:
 - Toggle mod on/off
 - Select button position (Left/Right/Center)
 - Choose between Default/Screenshot modes
+- Automatically hides chosen game elements
