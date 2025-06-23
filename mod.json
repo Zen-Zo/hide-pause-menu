@@ -1,5 +1,5 @@
 {
-	"geode": "4.5.0",
+	"geode": "4.6.1",
 	"gd": {
 		"win": "2.2074",
 		"android": "2.2074",
@@ -8,14 +8,14 @@
 	},
 	"id": "zenzo.hide_pause_menu",
 	"name": "Hide Pause Menu",
-	"version": "v1.0.3",
+	"version": "v1.1.0",
 	"developer": "ZenZo",
 	"description": "Adds a hide button the pause menu to hide it.",
 	"links": {
 		"source": "https://github.com/Zen-Zo/hide-pause-menu"
 	},
 	"issues": {
-		"info": "If you find any bugs, please report them on the mod's GitHub page.",
+		"info": "If you find any bugs, please report them on GitHub.",
 		"url": "https://github.com/Zen-Zo/hide-pause-menu/issues"
 	},
 	"dependencies": {
@@ -25,6 +25,10 @@
 			}
 	},
 	"settings": {
+		"main-settings": {
+			"type": "title",
+			"name": "Main settings"
+		},
 		"hide_button_mod" : {
 			"type": "bool",
 			"default": true,
@@ -32,6 +36,7 @@
 			"description": "Soft toggles the mod."
 		},
 		"hide_button_pos" : {
+			"enable-if": "hide_button_mod",
 			"type": "string",
 			"default": "Right",
 			"one-of": ["Left", "Bottom", "Right"],
@@ -39,10 +44,100 @@
 			"description": "Position of the button inside the pause menu."
 		},
 		"screenshot_mode" : {
+			"enable-if": "hide_button_mod",
 			"type": "bool",
 			"default": false,
 			"name": "Screenshot Mode",
-			"description": "Hide the 'Hide Pause Menu' button when the Pause Menu is hidden.\nThis is useful for taking screenshots without the button being in the way.\nWith this enabled, just click/tap the screen to re-show the pause menu."
+			"description": "Hide the 'Hide Pause Menu' button when the Pause Menu is hidden.\nWith this enabled, just click/tap the screen to re-show the Pause Menu."
+		},
+		"end_level_button" : {
+			"enable-if": "hide_button_mod",
+			"type": "bool",
+			"default": false,
+			"name": "Hide End Level Menu",
+			"description": "Adds the Hide Pause Menu button behavior on the vanilla Hide End Level Menu button."
+		},
+		"end_level_screenshot_mode" : {
+			"enable-if": "hide_button_mod",
+			"type": "bool",
+			"default": false,
+			"name": "End Level Screenshot Mode",
+			"description": "Hide the 'Hide End Level Menu' button when the End Level Menu is hidden.\nWith this enabled, just click/tap the screen to re-show the End Level Menu."
+		},
+		"auto-hide-settings": {
+			"type": "title",
+			"name": "Auto hide settings",
+			"description": "TODO"
+		},
+		"hide_progress_bar" : {
+			"type": "bool",
+			"default": false,
+			"name": "Hide Progress Bar",
+			"description": "Hides the progress bar when the pause menu is hidden."
+		},
+		"hide_percentage" : {
+			"type": "bool",
+			"default": false,
+			"name": "Hide Percentage",
+			"description": "Hides the percentage when the pause menu is hidden."
+		},
+		"hide_time" : {
+			"type": "bool",
+			"default": false,
+			"name": "Hide Platformer Time",
+			"description": "Hides the time when the pause menu is hidden."
+		},
+		"hide_info_label" : {
+			"type": "bool",
+			"default": false,
+			"name": "Hide Info Label",
+			"description": "Hides the info label when the pause menu is hidden."
+		},
+		"hide_attemps" : {
+			"type": "bool",
+			"default": false,
+			"name": "Hide Attemps",
+			"description": "Hides attemps when the pause menu is hidden."
+		},
+		"hide_practice_attemps" : {
+			"type": "bool",
+			"default": false,
+			"name": "Hide Practice Attemps",
+			"description": "Hides practice attemps when the pause menu is hidden."
+		},
+		"hide_checkpoints" : {
+			"type": "bool",
+			"default": false,
+			"name": "Hide Practice Checkpoints",
+			"description": "Hides practice checkpoints when the pause menu is hidden."
+		},
+		"hide_ui_layer" : {
+			"type": "bool",
+			"default": false,
+			"name": "Hide UI Layer",
+			"description": "Hides UI layer when the pause menu is hidden.\nThe UI Layer contain practice buttons, audio visualizer and other mods StartPos switchers and labels."
+		},
+		"hide_practice_buttons" : {
+			"enable-if": "!hide_ui_layer",
+			"enable-if-description": "Hide UI Layer setting already hide this",
+			"type": "bool",
+			"default": false,
+			"name": "Hide Practice Buttons",
+			"description": "Hides practice buttons when the pause menu is hidden."
+		},
+		"hide_audio_visualizer" : {
+			"enable-if": "!hide_ui_layer",
+			"enable-if-description": "Hide UI Layer setting already hide this",
+			"type": "bool",
+			"default": false,
+			"name": "Hide Audio Visualizer",
+			"description": "Hides the audio visualizer SFX and BG when the pause menu is hidden."
+		},
+		"hide_mod_menus" : {
+			"type": "bool",
+			"default": false,
+			"name": "Hide Mod Menus",
+			"description": "Hides floating button used by some mod menus when the pause menu is hidden.\nThis only makes the button invisible, it stays clickable.\nIf this hides something unexpected, open an issue on GitHub."
 		}
 	},
 	"resources": {
