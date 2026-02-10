@@ -1,3 +1,6 @@
+# v1.1.1
+- Fixed a bug with the "Hide Practice Buttons" setting
+
 # v1.1.0
 - New settings to hide more things!
 - Fix button position on mobile

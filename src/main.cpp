@@ -124,7 +124,7 @@ class $modify(HidePauseMenu, PauseLayer) {
 			playLayer->m_uiLayer->setVisible(visible);
 		} else if (gameManager) {
 			// Practice buttons
-			if (mod->getSettingValue<bool>("hide_practice_buttons")) {
+			if (playLayer->m_isPracticeMode && mod->getSettingValue<bool>("hide_practice_buttons")) {
 				toggleNodeVisibility(playLayer->m_uiLayer->getChildByID("checkpoint-menu"), visible, !m_fields->m_gameManager->getGameVariable(HIDE_PRACTICE_BUTTONS));
 			}
 

@@ -8,7 +8,7 @@
 	},
 	"id": "zenzo.hide_pause_menu",
 	"name": "Hide Pause Menu",
-	"version": "v1.1.0",
+	"version": "v1.1.1",
 	"developer": "ZenZo",
 	"description": "Adds a hide button the pause menu to hide it.",
 	"links": {
@@ -67,7 +67,7 @@
 		"auto-hide-settings": {
 			"type": "title",
 			"name": "Auto hide settings",
-			"description": "TODO"
+			"description": "Parts of the level layer that will be automatically hidden when hiding the pause menu."
 		},
 		"hide_progress_bar" : {
 			"type": "bool",
