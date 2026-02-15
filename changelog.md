@@ -1,5 +1,6 @@
 # v1.1.1
 - Fixed a bug with the "Hide Practice Buttons" setting
+- Updated to Geode 5.0.0 and GD 2.208x
 
 # v1.1.0
 - New settings to hide more things!
