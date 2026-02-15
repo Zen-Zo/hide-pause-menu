@@ -22,5 +22,5 @@ Button disappears completely when hiding menu
 ![Screenshot Mode - Clean UI for captures](zenzo.hide_pause_menu/BERZERKER.png?width=290)
 
 ## Issue Reporting & Feature Request
-- [Open GitHub Issue](https://github.com/Zen-Zo/hide-pause-menu/issues)
+- [Open GitHub Issue](https://github.com/Zen-Zo/HidePauseMenuMod/issues)
 - [Message me on Discord](https://discord.com/users/202202424469880833)

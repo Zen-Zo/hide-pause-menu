@@ -1,5 +1,5 @@
 {
-	"geode": "5.0.0-alpha.2",
+	"geode": "5.0.0-beta.1",
 	"gd": {
 		"win": "2.2081",
 		"android": "2.2081",
@@ -12,14 +12,14 @@
 	"developer": "ZenZo",
 	"description": "Adds a hide button the pause menu to hide it.",
 	"links": {
-		"source": "https://github.com/Zen-Zo/hide-pause-menu"
+		"source": "https://github.com/Zen-Zo/HidePauseMenuMod"
 	},
 	"issues": {
 		"info": "If you find any bugs, please report them on GitHub.",
-		"url": "https://github.com/Zen-Zo/hide-pause-menu/issues"
+		"url": "https://github.com/Zen-Zo/HidePauseMenuMod/issues"
 	},
 	"dependencies": {
-		"geode.node-ids": ">=v1.21.1",
+		"geode.node-ids": ">=v1.22.0",
 		"geode.custom-keybinds": {
 			"version": ">=1.10.4",
 			"required": false,
