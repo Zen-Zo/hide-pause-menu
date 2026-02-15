@@ -86,7 +86,7 @@ class $modify(HidePauseMenu, PauseLayer) {
 		m_fields->m_buttonPos = getChildByID(buttonPos);
 	}
 
-	void changeChildrenVisibility(CCArray* nodes, bool visible, const std::string& exceptionID = NONE_EXECPTION_ID) {
+	void changeChildrenVisibility(CCArray* nodes, bool visible, const geode::ZStringView& exceptionID = NONE_EXECPTION_ID) {
 		for (auto* node : CCArrayExt<CCNode>(nodes)) {
 			if (node->getID() == exceptionID || m_fields->m_nonVisibleNodes.count(node) > 0) continue;
 			
