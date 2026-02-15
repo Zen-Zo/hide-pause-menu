@@ -16,7 +16,6 @@ Adds a configurable hide button to the pause menu to hide it, perfect to get a b
 Button remains visible when menu is hidden
 
 ![Default Mode - Button visible during menu hide](./resources/InvisibleDealocked.png)
-*"Show hitbox on death" not included within the mod*
 
 ### 2. Screenshot Mode
 

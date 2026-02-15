@@ -19,12 +19,7 @@
 		"url": "https://github.com/Zen-Zo/HidePauseMenuMod/issues"
 	},
 	"dependencies": {
-		"geode.node-ids": ">=v1.22.0",
-		"geode.custom-keybinds": {
-			"version": ">=1.10.4",
-			"required": false,
-			"platforms": ["win", "mac"]
-		}
+		"geode.node-ids": ">=v1.22.0"
 	},
 	"settings": {
 		"main-settings": {

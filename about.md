@@ -14,7 +14,6 @@ Adds a hide button to the pause menu to hide it, perfect to get a better look at
 Button remains visible when menu is hidden
 
 ![Default Mode - Button visible during menu hide](zenzo.hide_pause_menu/InvisibleDealocked.png?width=290)
-*"Show hitbox on death" not included in the mod*
 
 ### 2. Screenshot Mode
 Button disappears completely when hiding menu
